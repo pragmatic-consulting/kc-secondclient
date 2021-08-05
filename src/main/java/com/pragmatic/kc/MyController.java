@@ -14,13 +14,13 @@ public class MyController {
 	}
 
 	@RolesAllowed("ADMIN")
-	@GetMapping(value = "/admin-second-app-page")
+	@GetMapping("/admin-second-app-page")
 	public SenderResponse adminEndpoint() {
 		return new SenderResponse("If you see this you're an administrator !");
 	}
 
 	@RolesAllowed("MANAGER")
-	@GetMapping(value = "/user-second-app-page")
+	@GetMapping("/user-second-app-page")
 	public SenderResponse managerEndpoint() {
 		return new SenderResponse("you're a user !");
 	}
