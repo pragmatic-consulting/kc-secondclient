@@ -13,14 +13,12 @@ public class MyController {
 		return new SenderResponse("First client Home open");
 	}
 
-	@RolesAllowed("ROLE_ADMIN")
-	@GetMapping(value = "admin-second-app-page")
+	@GetMapping(value = "/admin-second-app-page")
 	public SenderResponse adminEndpoint() {
 		return new SenderResponse("If you see this you're an administrator !");
 	}
 
-	@RolesAllowed("ROLE_MANAGER")
-	@GetMapping(value = "user-second-app-page")
+	@GetMapping(value = "/user-second-app-page")
 	public SenderResponse managerEndpoint() {
 		return new SenderResponse("you're a user !");
 	}
