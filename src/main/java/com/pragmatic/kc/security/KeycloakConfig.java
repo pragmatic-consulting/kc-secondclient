@@ -40,10 +40,8 @@ public class KeycloakConfig extends KeycloakWebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		super.configure(http);
 
-		http.authorizeRequests()
-		.antMatchers("/admin-second-app-page/**").hasAuthority("ADMIN")
-		.antMatchers("/user-second-app-page/**").hasAuthority("MANAGER")
-		.anyRequest().authenticated();
+		http.authorizeRequests().anyRequest().permitAll();
+		http.csrf().disable();
 	}
 
 }
